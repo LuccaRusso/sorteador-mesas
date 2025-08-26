@@ -1,24 +1,26 @@
 <!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Rodízio de Mesas</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <div class="container">
-      <h2>Rodízio de Mesas — Sorteador Oficial do 2ºE</h2>
-    </div>
-  </header>
 
-  <main class="container">
-    <div class="layout">
-      <div class="left">
-        <div class="panel">
-          <label><strong>Alunos (um por linha)</strong></label>
-          <textarea id="studentsInput">Alisson
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Rodízio de Mesas</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h2>Rodízio de Mesas — Sorteador Oficial do 2ºE</h2>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="layout">
+            <div class="left">
+                <div class="panel">
+                    <label><strong>Alunos (um por linha)</strong></label>
+                    <textarea id="studentsInput">Alisson
 Bea
 Bianca
 Bruna
@@ -42,41 +44,47 @@ Paulino
 Pizza
 Rapha
 Vini</textarea>
-          <div style="margin-top:10px;display:flex;gap:8px;align-items:center">
-            <label>Dias:</label>
-            <input id="daysCount" type="number" value="6" min="1" max="30" />
-            <button id="generateBtn">Gerar rodízio</button>
-          </div>
-          <div style="margin-top:10px" class="small">
-            Observação: Insira a lista de alunos (um por linha). 
-            O gerador evita repetir pares de pessoas entre os dias.
-          </div>
-        </div>
+                    <div class="form-row">
+                        <label>Dias:</label>
+                        <input id="daysCount" type="number" value="6" min="1" max="30" />
+                        <button id="generateBtn">Gerar rodízio</button>
+                    </div>
+                    <div class="small">
+                        Observação: Insira a lista de alunos (um por linha).
+                        O gerador evita repetir pares de pessoas entre os dias.
+                    </div>
+                </div>
 
-        <div style="margin-top:12px" class="panel">
-          <div style="display:flex;align-items:center;gap:8px">
-            <label><strong>Visualizar Dia</strong></label>
-            <div class="nav" style="margin-left:6px">
-              <button id="prevDay">◀</button>
-              <div id="dayLabel" style="min-width:80px;text-align:center">Dia 1</div>
-              <button id="nextDay">▶</button>
+                <div class="panel">
+                    <div class="form-row">
+                        <label><strong>Visualizar Dia</strong></label>
+                        <div class="nav">
+                            <button id="prevDay">◀</button>
+                            <div id="dayLabel">Dia 1</div>
+                            <button id="nextDay">▶</button>
+                        </div>
+                        <div class="export"><span id="scoreInfo" class="small"></span></div>
+                    </div>
+                </div>
             </div>
-            <div class="export"><span id="scoreInfo" class="small"></span></div>
-          </div>
+
+            <!-- Imagem do layout das mesas -->
+            <div class="tables-design">
+                <img src="mesa-exemplo.png" alt="Design das mesas" />
+            </div>
+            <div class="right">
+                <div class="tables-canvas" id="canvas">
+                    <!-- tables will be drawn here -->
+                </div>
+            </div>
         </div>
-      </div>
+    </main>
 
-      <div class="right">
-        <div class="tables-canvas" id="canvas">
-        </div>
-      </div>
-    </div>
-  </main>
+    <footer>
+        Desenvolvido para o 2ºE 💡
+    </footer>
 
-  <footer>
-    Desenvolvido para o 2ºE 💡
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
